@@ -9,6 +9,8 @@ npm install @rbxts/react-pie-chart
 ## Usage
 
 ```ts
+import { Pie } from "@rbxts/react-pie-chart";
+
 <Pie
     Size={UDim2.fromOffset(300, 300)}
     AnchorPoint={new Vector2(0.5, 0.5)}
