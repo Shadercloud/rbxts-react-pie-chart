@@ -3,6 +3,7 @@ local TS = _G[script]
 local _react = TS.import(script, TS.getModule(script, "@rbxts", "react"))
 local React = _react
 local useState = _react.useState
+local GuiService = TS.import(script, TS.getModule(script, "@rbxts", "services")).GuiService
 local function Segment(props)
 	local sizeX = if props.section == "Left" or props.section == "Right" then 0.5 else 1
 	local sizeY = if props.section == "Left" or props.section == "Right" then 1 else 0.5
@@ -179,8 +180,9 @@ local function Pie(props)
 			end
 		end,
 		MouseMoved = function(rbx, x, y)
+			local offset = GuiService:GetGuiInset()
 			local localX = x - rbx.AbsolutePosition.X
-			local localY = y - rbx.AbsolutePosition.Y
+			local localY = y - rbx.AbsolutePosition.Y - offset.Y
 			local width = rbx.AbsoluteSize.X
 			local height = rbx.AbsoluteSize.Y
 			local centerX = width / 2

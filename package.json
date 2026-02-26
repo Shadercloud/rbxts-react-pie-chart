@@ -33,6 +33,9 @@
     "roblox-ts": "^3.0.0",
     "typescript": "^5.9.3"
   },
+  "dependencies": {
+    "@rbxts/services": "^1.0.0"
+  },
   "peerDependencies": {
     "@rbxts/react": "^17.3.5-alpha.2"
   },

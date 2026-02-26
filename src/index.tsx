@@ -1,5 +1,5 @@
 import React, { useState } from "@rbxts/react";
-
+import { GuiService } from "@rbxts/services";
 type PieValue = {
 	color: Color3;
 	size: number;
@@ -171,8 +171,9 @@ export function Pie(props: PieProps) {
 					props.onClick?.(state.hover, props.Values[state.hover])
 				},
 				MouseMoved: (rbx: Frame, x: number, y: number): void => {
+					const [offset] = GuiService.GetGuiInset()
 					const localX = x - rbx.AbsolutePosition.X;
-					const localY = y - rbx.AbsolutePosition.Y;
+					const localY = y - rbx.AbsolutePosition.Y - offset.Y;
 
 					const width = rbx.AbsoluteSize.X;
 					const height = rbx.AbsoluteSize.Y;
