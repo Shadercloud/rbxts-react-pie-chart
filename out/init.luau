@@ -163,6 +163,9 @@ local function Pie(props)
 	_attributes.AnchorPoint = props.AnchorPoint
 	_attributes.Position = props.Position
 	_attributes.Event = {
+		MouseLeave = function()
+			changeHover(-1)
+		end,
 		InputEnded = function(rbx, input)
 			if input.UserInputType ~= Enum.UserInputType.MouseButton1 then
 				return nil

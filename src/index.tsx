@@ -161,6 +161,9 @@ export function Pie(props: PieProps) {
 			AnchorPoint={props.AnchorPoint}
 			Position={props.Position}
 			Event={{
+				MouseLeave: () => {
+					changeHover(-1)
+				},
 				InputEnded: (rbx: Frame, input: InputObject): void => {
 					if (input.UserInputType !== Enum.UserInputType.MouseButton1) return
 					if (state.hover < 0) return
